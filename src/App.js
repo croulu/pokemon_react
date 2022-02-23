@@ -3,13 +3,15 @@ import UsePokedex from "./UsePokedex"
 
 const App = () => {
 
-    const {pokemonList} = UsePokedex()
+    const {pokemonList, isLoading} = UsePokedex()
 
     console.log(pokemonList)
 
+    if (isLoading) return <h1>Loading...</h1>
+
     return (
         <div className="App">
-            AAA
+            Hello
         </div>
     );
 }

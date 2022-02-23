@@ -7,7 +7,7 @@ const P = new Pokedex.Pokedex()
 
 const UsePokedex = () => {
     const [pokemonList, setPokemonList] = useState(null)
-    const [isLoadling, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
     const [config, setConfig] = useState({
         offset: 0,
         limit: 10
@@ -25,7 +25,7 @@ const UsePokedex = () => {
     }, [config])
 
     return {
-        pokemonList
+        pokemonList, isLoading
     }
 };
 
