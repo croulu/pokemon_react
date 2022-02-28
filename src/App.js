@@ -3,16 +3,14 @@ import UsePokedex from "./UsePokedex"
 
 const App = () => {
 
-    const {pokemonsList, isLoading} = UsePokedex()
-
-    console.log('--->')
-    console.log(pokemonsList)
+    const {pokemonsList, isLoading, goPrev, goNext} = UsePokedex()
 
     if (isLoading) return <h1>Loading...</h1>
 
     return (
         <div className="App">
-            Hello
+            <button onClick={goPrev}>Prev</button>
+            <button onClick={goNext}>Next</button>
         </div>
     );
 }

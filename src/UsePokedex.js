@@ -19,13 +19,32 @@ const UsePokedex = () => {
         const getPokemonsList = async () => {
             const pokemons = await P.getPokemonsList(config)
             setPokemonList(pokemons)
+            console.log(pokemonsList)
             setIsLoading(false)
         }
         getPokemonsList()
     }, [config])
 
+    const goPrev = () => {
+        const offset = config.offset - 10
+
+        setConfig ({
+            ... config,
+            offset
+        })
+    }
+
+    const goNext = () => {
+        const offset = config.offset + 10
+
+        setConfig ({
+            ... config,
+            offset
+        })
+    }
+
     return {
-        pokemonsList, isLoading
+        pokemonsList, isLoading, goPrev, goNext
     }
 };
 
