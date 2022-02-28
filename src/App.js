@@ -3,9 +3,10 @@ import UsePokedex from "./UsePokedex"
 
 const App = () => {
 
-    const {pokemonList, isLoading} = UsePokedex()
+    const {pokemonsList, isLoading} = UsePokedex()
 
-    console.log(pokemonList)
+    console.log('--->')
+    console.log(pokemonsList)
 
     if (isLoading) return <h1>Loading...</h1>
 

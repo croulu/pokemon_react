@@ -6,7 +6,7 @@ const P = new Pokedex.Pokedex()
 
 
 const UsePokedex = () => {
-    const [pokemonList, setPokemonList] = useState(null)
+    const [pokemonsList, setPokemonList] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [config, setConfig] = useState({
         offset: 0,
@@ -16,16 +16,16 @@ const UsePokedex = () => {
     useEffect(() => {
         setIsLoading(true)
 
-        const getPokemonList = async () => {
+        const getPokemonsList = async () => {
             const pokemons = await P.getPokemonsList(config)
             setPokemonList(pokemons)
             setIsLoading(false)
         }
-        getPokemonList()
+        getPokemonsList()
     }, [config])
 
     return {
-        pokemonList, isLoading
+        pokemonsList, isLoading
     }
 };
 
