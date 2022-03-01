@@ -1,4 +1,3 @@
-import React from 'react';
 import {useState, useEffect} from 'react';
 
 const Pokedex = require('pokeapi-js-wrapper')
@@ -19,19 +18,16 @@ const UsePokedex = () => {
         const getPokemonsList = async () => {
             const pokemons = await P.getPokemonsList(config)
             setPokemonsList(pokemons)
-            console.log(pokemonsList)
             setIsLoading(false)
         }
         getPokemonsList()
-        console.log ("[get]->")
-        console.log(pokemonsList)
     }, [config])
 
     const goPrev = () => {
         const offset = config.offset - 10
 
         setConfig ({
-            ... config,
+            ...config,
             offset
         })
     }
@@ -40,7 +36,7 @@ const UsePokedex = () => {
         const offset = config.offset + 10
 
         setConfig ({
-            ... config,
+            ...config,
             offset
         })
     }
