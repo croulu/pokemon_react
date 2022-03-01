@@ -12,14 +12,13 @@ const App = () => {
         <div className="App">
             <ul>
                 {
-
                     pokemonsList.results.map(pokemon => {
                         <li key={pokemon.name}>{pokemon.name}</li>
                     })
                 }
             </ul>
-            <button onClick={goPrev}>Prev</button>
-            <button onClick={goNext}>Next</button>
+            <button disabled={!pokemonsList.previous} onClick={goPrev}>Prev</button>
+            <button disabled={!pokemonsList.next} onClick={goNext}>Next</button>
         </div>
     );
 }
