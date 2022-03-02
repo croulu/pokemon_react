@@ -1,5 +1,5 @@
 import React from 'react';
-import UsePokedex from './UsePokedex'
+import UsePokedex from './hooks/UsePokedex'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
 const App = () => {
