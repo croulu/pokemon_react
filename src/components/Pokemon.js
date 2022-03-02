@@ -23,9 +23,22 @@ const Pokemon = () => {
 
     if (isLoading) return <h1>Loading...</h1>
 
+    const descriptions = [
+        pokemon.flavor_text_entries[16].flavor_text,
+        pokemon.flavor_text_entries[18].flavor_text,
+        pokemon.flavor_text_entries[24].flavor_text,
+        pokemon.flavor_text_entries[32].flavor_text,
+        pokemon.flavor_text_entries[57].flavor_text,
+        pokemon.flavor_text_entries[67].flavor_text,
+        pokemon.flavor_text_entries[77].flavor_text,
+        pokemon.flavor_text_entries[87].flavor_text
+    ]
+    const uniqueDescription = [...new Set(descriptions)].join(" ")
+
     return (
         <div>
             <h1>{pokemon.name}</h1>
+            <div>{uniqueDescription}</div>
             <img src={pokemon.sprites.other['official-artwork'].front_default}
                  alt=''
                  style={{height: '300px'}}

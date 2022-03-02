@@ -22,6 +22,7 @@ const UsePokedex = () => {
             const results = await Promise.all(requests)
 
             setPokemonsList({...pokemons, results})
+
             setIsLoading(false)
         }
         getPokemonsList()
@@ -47,7 +48,8 @@ const UsePokedex = () => {
 
     const getPokemon = async name => {
         const pokemon = await P.getPokemonByName(name)
-        return {...pokemon}
+        const species = await P.getPokemonSpeciesByName(name)
+        return {...pokemon, ...species}
     }
 
     return {
