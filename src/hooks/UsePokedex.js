@@ -17,7 +17,11 @@ const UsePokedex = () => {
 
         const getPokemonsList = async () => {
             const pokemons = await P.getPokemonsList(config)
-            setPokemonsList(pokemons)
+
+            const requests = pokemons.results.map(( {name}) => P.getPokemonByName(name))
+            const results = await Promise.all(requests)
+
+            setPokemonsList({...pokemons, results})
             setIsLoading(false)
         }
         getPokemonsList()

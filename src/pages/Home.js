@@ -12,6 +12,7 @@ const Home = () => {
             <ul>
                 {
                     pokemonsList.results.map(pokemon => <li key={pokemon.name}>
+                        <img src={pokemon.sprites.front_default} alt={''} />
                         <Link to={`/${pokemon.name}`}>{pokemon.name}</Link>
                     </li>)
                 }
