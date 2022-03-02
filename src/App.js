@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import UsePokedex from './hooks/UsePokedex'
 import Home from "./pages/Home";
 import PokeContext from "./contexts/PokeContext";
+import PokemonPage from "./pages/PokemonPage";
 
 const App = () => {
 
@@ -15,7 +16,9 @@ const App = () => {
                     <Route exact path='/'>
                         <Home></Home>
                     </Route>
-                    <Route path='/*'><h1>pokemon *</h1></Route>
+                    <Route path='/*'>
+                        <PokemonPage></PokemonPage>
+                    </Route>
                 </Switch>
             </Router>
         </PokeContext.Provider>
