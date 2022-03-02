@@ -41,8 +41,13 @@ const UsePokedex = () => {
         })
     }
 
+    const getPokemon = async name => {
+        const pokemon = await P.getPokemonByName(name)
+        return {...pokemon}
+    }
+
     return {
-        pokemonsList, isLoading, goPrev, goNext
+        pokemonsList, isLoading, goPrev, goNext, getPokemon
     }
 };
 

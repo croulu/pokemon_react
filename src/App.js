@@ -7,10 +7,10 @@ import PokemonPage from "./pages/PokemonPage";
 
 const App = () => {
 
-    const {pokemonsList, isLoading, goPrev, goNext} = UsePokedex()
+    const {pokemonsList, isLoading, goPrev, goNext, getPokemon} = UsePokedex()
 
     return (
-        <PokeContext.Provider value={{pokemonsList, isLoading, goPrev, goNext}}>
+        <PokeContext.Provider value={{pokemonsList, isLoading, goPrev, goNext, getPokemon}}>
             <Router>
                 <Switch>
                     <Route exact path='/'>

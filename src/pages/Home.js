@@ -4,6 +4,7 @@ import PokeContext from "../contexts/PokeContext";
 
 const Home = () => {
     const {pokemonsList, isLoading, goPrev, goNext} = useContext(PokeContext)
+
     if (isLoading) return <h1>Loading...</h1>
 
     return (
