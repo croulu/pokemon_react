@@ -19,13 +19,17 @@ const Pokemon = () => {
         }
         fetchPokemon()
 
-    }, [location])
+    }, [location, getPokemon])
 
     if (isLoading) return <h1>Loading...</h1>
 
     return (
         <div>
-            {pokemon.name}
+            <h1>{pokemon.name}</h1>
+            <img src={pokemon.sprites.other['official-artwork'].front_default}
+                 alt=''
+                 style={{height: '300px'}}
+            />
         </div>
     );
 };
